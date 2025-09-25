@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pariwisata Indonesia</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">Wisata Indonesia</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#destinasi">Destinasi</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="slideshow" id="beranda">
+    <div class="slides">
+      <img src="jpg.jpg" alt="Slide 1">
+      <img src="jpg2.jpg" alt="Slide 2">
+      <img src="jpg3.jpg" alt="Slide 3">
+    </div>
+    <div class="caption">Jelajahi Keindahan Indonesia</div>
+  </section>
+
+  <section class="content" id="destinasi">
+    <h2>Destinasi Populer</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="Gambar 1.jpg" alt="Bali">
+        <h3>Bali</h3>
+        <p>Pulau Dewata dengan pantai indah dan budaya unik.</p>
+      </div>
+      <div class="card">
+        <img src="Gambar 2.jpg" alt="Raja Ampat">
+        <h3>Raja Ampat</h3>
+        <p>Surga bawah laut yang memukau di Papua Barat.</p>
+      </div>
+      <div class="card">
+        <img src="Gambar 3.jpg" alt="Borobudur">
+        <h3>Borobudur</h3>
+        <p>Candi Budha terbesar di dunia yang megah.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="tentang">
+    <h2>Tentang Kami</h2>
+    <p>Kami adalah platform informasi pariwisata Indonesia yang menyajikan keindahan nusantara melalui pengalaman visual dan informasi destinasi terbaik.</p>
+  </section>
+
+  <section class="contact" id="kontak">
+    <h2>Kontak</h2>
+    <p>Email: info@wisataindonesia.com</p>
+    <p>Instagram: @wisata_indonesia</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Wisata Indonesia. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slides img");
+
+    function showSlides() {
+      slides.forEach((slide, index) => {
+        slide.style.display = (index === slideIndex) ? "block" : "none";
+      });
+      slideIndex = (slideIndex + 1) % slides.length;
+      setTimeout(showSlides, 3000);
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>
